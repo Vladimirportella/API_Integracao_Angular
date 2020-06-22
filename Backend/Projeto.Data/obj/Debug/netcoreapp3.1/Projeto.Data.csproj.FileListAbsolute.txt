@@ -1,0 +1,5 @@
+C:\Users\windows\Desktop\002\Coti\TesteAula29\Projeto.Data\bin\Debug\netcoreapp3.1\Projeto.Data.deps.json
+C:\Users\windows\Desktop\002\Coti\TesteAula29\Projeto.Data\bin\Debug\netcoreapp3.1\Projeto.Data.dll
+C:\Users\windows\Desktop\002\Coti\TesteAula29\Projeto.Data\obj\Debug\netcoreapp3.1\Projeto.Data.csprojAssemblyReference.cache
+C:\Users\windows\Desktop\002\Coti\TesteAula29\Projeto.Data\obj\Debug\netcoreapp3.1\Projeto.Data.AssemblyInfoInputs.cache
+C:\Users\windows\Desktop\002\Coti\TesteAula29\Projeto.Data\obj\Debug\netcoreapp3.1\Projeto.Data.AssemblyInfo.cs

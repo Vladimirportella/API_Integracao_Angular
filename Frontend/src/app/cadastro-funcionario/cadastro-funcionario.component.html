@@ -1,0 +1,36 @@
+<h4>Cadastro de Funcionários</h4>
+<p>Formulário para cadastro de funcionários</p>
+
+<form #formCadastro="ngForm" (submit)="cadastrarFuncionario(formCadastro)">
+
+    <label>Nome do Funcionário</label>
+    <input type="text" class="form-control col-md-4" placeholder="Nome do funcionário"
+            name="Nome" ngModel/>
+        <div class="text-danger" *ngFor="let item of errosNome">
+                {{item}}
+        </div>
+    <br/>
+
+    <label>Salário:</label>
+    <input type="text" class="form-control col-md-4" placeholder="Salário"
+            name="Salario" ngModel/>
+        <div class="text-danger" *ngFor="let item of errosSalario">
+                {{item}}
+        </div>
+    <br/>
+
+    <label>Data de Admissão</label>
+    <input type="date" class="form-control col-md-4" placeholder="Data de admissão"
+            name="DataAdmissao" ngModel/>
+        <div class="text-danger" *ngFor="let item of errosDataAdmissao">
+                {{item}}
+        </div>
+    <br/>
+
+    <input type="submit" value="Cadastrar Funcionário"
+           class="btn btn-success"/>
+    <br/>
+    <br/>
+
+    <strong>{{mensagem}}</strong>
+</form>

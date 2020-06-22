@@ -1,0 +1,86 @@
+<h4>Consulta de Funcionários</h4>
+<p>Listagem de funcionários cadastrados</p>
+
+<div>
+    <strong>{{mensagem}}</strong>
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome do Funcionário</th>
+            <th>Salário</th>
+            <th>Data de Admissão</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listagemDeFuncionarios">
+            <td>{{item.idFuncionario}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.salario | currency : 'R$'}}</td>
+            <td>{{item.dataAdmissao | date : 'dd/MM/yyyy'}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm"
+                        data-target="#janelaedicao" data-toggle="modal"
+                        (click)="obterFuncionario(item.idFuncionario)">Atualizar</button>
+                <button class="btn btn-danger btn-sm ml-2"
+                        (click)="excluirFuncionario(item.idFuncionario)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                Quantidade de funcionários: {{listagemDeFuncionarios.length}}
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div id="janelaedicao" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5>Atualizar dados do Funcionário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form #formEdicao="ngForm" (submit)="atualizarFuncionario(formEdicao)">
+
+                    <input type="hidden" name="idFuncionario"
+                        [(ngModel)]="funcionarioEdicao.idFuncionario"/>
+
+                    <label>Nome do Funcionário:</label>
+                    <input type="text" class="form-control"
+                           name="nome"  [(ngModel)]="funcionarioEdicao.nome"/>
+                    <br/>
+
+                    <label>Salário:</label>
+                    <input type="text" class="form-control"
+                           name="salario"  [(ngModel)]="funcionarioEdicao.salario"/>
+                    <br/>
+
+                    <label>Data de Admissão:</label>
+                    <input type="text" class="form-control"
+                           name="dataAdmissao"  [(ngModel)]="funcionarioEdicao.dataAdmissao"/>
+                    <br/>
+
+                    <input type="submit" class="btn btn-success"
+                           value="Salvar Alterações"/>
+                    <br/>
+                    <br/>
+
+                    <strong>{{mensagemEdicao}}</strong>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

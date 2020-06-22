@@ -1,0 +1,44 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Sistema de Controle de Funcionários</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" *ngIf="!isAuthenticated">
+          <a class="nav-link" routerLink="autenticar-usuario">
+            Acesso ao Sistema <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active" *ngIf="!isAuthenticated">
+          <a class="nav-link" routerLink="criar-conta-usuario">
+            Criar Conta de Usuário </a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isAuthenticated">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Gerenciar Funcionários
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="cadastro-funcionario">Cadastrar novo funcionário</a>
+            <a class="dropdown-item" routerLink="consulta-funcionario">Consultar funcionários</a>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="btn btn-danger btn-sm text-white mt-1 ml-4"
+             (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="card card-body bg-light">
+    <h2>Sistema de Controle de Funcionários</h2>
+    Projeto desenvolvido em Angular e integrado com NET CORE API
+  </div>
+  <br />
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<h4>Acesso ao sistema</h4>
+<p>Preencha os campos abaixo para realizar o acesso</p>
+
+<form #formAcesso="ngForm" (submit)="autenticarUsuario(formAcesso)">
+        
+    <label>Email de Acesso:</label>
+    <input type="text" class="form-control col-md-4"
+            name="Email" ngModel placeholder="Digite aqui"/>
+        <div *ngFor="let item of erroEmail" class="text-danger">
+                {{item}}
+        </div>
+    <br/>
+
+    <label>Senha de Acesso:</label>
+    <input type="password" class="form-control col-md-4"
+            name="Senha" ngModel placeholder="Digite aqui"/>
+        <div *ngFor="let item of erroSenha" class="text-danger">
+                {{item}}
+        </div>
+    <br/>
+
+    <input type="submit" value="Acessar Sistema" class="btn btn-dark">
+    <br/>
+    <br/>
+
+    <strong>{{mensagem}}</strong>
+
+</form>
+
+
